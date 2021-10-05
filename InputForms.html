@@ -134,6 +134,13 @@
             if (phoneRegex.test(tel.value)) phoneError.textContent = "";
             else phoneError.textContent = "Please enter a valid mobile number.";
             };
+            const passwordError = document.querySelector(".pwd-error");
+            pwd.oninput = function () 
+            {
+            let passwordRegex = RegExp("^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$");//To validate Password
+            if (passwordRegex.test(pwd.value)) passwordError.textContent = "";
+            else passwordError.textContent = "Please enter a valid password.";
+            };
         </script>
     </form>
 </body>
