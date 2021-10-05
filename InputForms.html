@@ -141,6 +141,13 @@
             if (passwordRegex.test(pwd.value)) passwordError.textContent = "";
             else passwordError.textContent = "Please enter a valid password.";
             };
+            const salary = document.querySelector("#salary");//To validate salary of user
+            const output = document.querySelector(".salary-output");
+            output.textContent = salary.value;
+            salary.addEventListener("input", function () 
+            {
+            output.textContent = salary.value;
+            });
         </script>
     </form>
 </body>
