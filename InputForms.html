@@ -93,7 +93,7 @@
         <div>
             <label for="tel">Telephone input type:</label>
             <input type="tel" id="tel" name="tel">
-            <error-output class="ph-error" for="tel"></error-output>
+            <error-output class="phone-error" for="tel"></error-output>
         </div>
         <div>
             <label for="search">Search input type:</label>
@@ -126,6 +126,13 @@
             let emailRegex = RegExp("^[a-zA-Z0-9-_+]+(\\.?[a-zA-Z0-9-_]+)@[a-zA-Z0-9-_]+\\.[a-zA-Z]{2,}(\\.?[a-zA-Z-_]+)$");
             if (emailRegex.test(email.value)) emailError.textContent = "";
             else emailError.textContent = "Please enter a valid Email.";
+            };
+            const phoneError = document.querySelector(".phone-error");//To validate mobile number
+            tel.oninput = function () 
+            {
+            let phoneRegex = RegExp("^91 [0-9]{10}$");
+            if (phoneRegex.test(tel.value)) phoneError.textContent = "";
+            else phoneError.textContent = "Please enter a valid mobile number.";
             };
         </script>
     </form>
